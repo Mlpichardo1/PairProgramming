@@ -2,8 +2,26 @@ using System;
 
 namespace PairProgramming
 {
-    public class Transaction
+    public class Transaction : BankAccount
     {
+        public Transaction(string user, string accountName, DateTime dateOpened, double funds) : base(user, accountName, dateOpened, funds)
+        {
+        }
+
+        public double Deposit{ get; set; }
+        public double Withdrawel{ get; set; }
+
+        public double DepositTransaction(double deposit)
+        {
+            System.Console.WriteLine("Deposit is accepted");
+            return Funds + Deposit;
+        }
+
+        public double WithdrawelTransaction(double withdrawel)
+        {
+            System.Console.WriteLine("Withdrawel is accepted");
+            return Funds - Withdrawel;
+        }
         
     }
 }
